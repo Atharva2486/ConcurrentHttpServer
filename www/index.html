@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concurrent HTTP Server Demo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b1020;
+      --panel: #131a2e;
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --text: #e8ecf8;
+      --muted: #aeb8d4;
+      --primary: #60a5fa;
+      --primary-strong: #2563eb;
+      --accent: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.22), transparent 30%),
+        linear-gradient(180deg, #0b1020 0%, #08101a 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero {
+      padding: 32px;
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: rgba(19, 26, 46, 0.88);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .actions,
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .actions {
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: white;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--panel-border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .section-title {
+      margin: 36px 0 16px;
+      font-size: 1.25rem;
+    }
+
+    .cards {
+      margin-top: 8px;
+    }
+
+    .card {
+      flex: 1 1 280px;
+      min-width: 260px;
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid var(--panel-border);
+      background: rgba(19, 26, 46, 0.82);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.14);
+      color: #8ef0b1;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="tag">Concurrent HTTP Server Demo</span>
+      <h1>Interactive Monitoring + Heavy Static Content</h1>
+      <p>
+        Live server metrics, rich linked content, and a clean way to showcase
+        concurrency, caching, and prefetching in one place.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="/monitor/">Open Monitoring Dashboard</a>
+        <a class="button button-secondary" href="/cp-algo/">Open CP Algorithms Demo</a>
+      </div>
+    </section>
+
+    <h2 class="section-title">Contents Available</h2>
+    <div class="cards">
+      <article class="card">
+        <h2>Real-Time Dashboard</h2>
+        <p>
+          A live monitor for connections, request rate, cache hit ratio, memory
+          usage, and worker activity.
+        </p>
+      </article>
+      <article class="card">
+        <h2>CP Algorithms Library</h2>
+        <p>
+          A website for learning competitive programming through algorithms,
+          data structures, problem-solving patterns, and topic-wise notes.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Static Asset Network</h2>
+        <p>
+          Shared resources across multiple pages make cache reuse and prefetch
+          behavior easy to observe.
+        </p>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

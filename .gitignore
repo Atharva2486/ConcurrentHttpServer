@@ -1,0 +1,23 @@
+# Nested repo metadata (would embed local git identity in logs; omit when sharing)
+monitor-ui/.git/
+
+# Dependencies (reinstall: cd monitor-ui && npm install)
+monitor-ui/node_modules/
+
+# Runtime logs
+logs/
+*.log
+
+# C++ build artifacts
+*.o
+*.out
+concurrent_http_server
+concurrent_http_server.exe
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+
+# Optional: uncomment if you want git to ignore the pre-built UI bundle
+# www/monitor/
